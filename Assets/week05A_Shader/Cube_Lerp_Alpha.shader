@@ -1,8 +1,9 @@
-Shader "My/SurfaceShader/UV_Operation"
+Shader "Custom/Cube_Lerp_Alpha"
 {
-    Properties
+    Properties //인터페이스 생성
     {
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
+        _MainTex2("Albedo (RGB)", 2D) = "white" {}
     }
     SubShader
     {
@@ -11,19 +12,22 @@ Shader "My/SurfaceShader/UV_Operation"
         CGPROGRAM
         #pragma surface surf Standard fullforwardshadows
 
+
         sampler2D _MainTex;
+        sampler2D _MainTex2;
 
         struct Input
         {
             float2 uv_MainTex;
+            float2 uv_MainTex2;
         };
 
         void surf (Input IN, inout SurfaceOutputStandard o)
-        {   
-            //좌표
-            fixed4 c = tex2D (_MainTex, IN.uv_MainTex + 0.1); // add value to uv in all vertex. uv increases to move texture to left-down side
-            o.Albedo = c.rgb;
-            o.Emission = float3(IN.uv_MainTex.x, IN.uv_MainTex.y, 0);
+        {
+            fixed4 c = tex2D (_MainTex, IN.uv_MainTex);
+            fixed4 d = tex2D (_MainTex2, IN.uv_MainTex2);
+            //o.Albedo = lerp(c.rgb,d.rgb,d.a);
+            o.Albedo = lerp(d.rgb, c.rgb, d.a);
             o.Alpha = c.a;
         }
         ENDCG

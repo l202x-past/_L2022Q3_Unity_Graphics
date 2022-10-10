@@ -27,7 +27,7 @@ Shader "My/SurfaceShader/UV_Time"
         *******************************************/
         void surf (Input IN, inout SurfaceOutputStandard o)
         {
-            fixed4 c = tex2D (_MainTex, IN.uv_MainTex + _Time.y); // x, y 축으로 _Time.y = 1 만큼 이동
+            fixed4 c = tex2D (_MainTex, IN.uv_MainTex + _Time.y); // x, y 축으로 _Time.y = 1 만큼 이동 누적된 시간 반영
             //fixed4 c = tex2D (_MainTex, float2(IN.uv_MainTex.x + _Time.y, IN.uv_MainTex.y)); // x 축으로 이동
             //fixed4 c = tex2D (_MainTex, float2(IN.uv_MainTex.x, IN.uv_MainTex.y + _Time.y)); // y 축으로 이동
             //o.Albedo = c.rgb;

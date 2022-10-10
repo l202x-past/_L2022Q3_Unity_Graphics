@@ -24,6 +24,7 @@ Shader "My/SurfaceShader/UV_Starter"
             o.Albedo = c.rgb;
             //o.Emission = IN.uv_MainTex.x;
             //o.Emission = IN.uv_MainTex.y;
+
             o.Emission = float3(IN.uv_MainTex.x, IN.uv_MainTex.y, 0); // U --> Red, V --> Green
             o.Alpha = c.a;
         }
