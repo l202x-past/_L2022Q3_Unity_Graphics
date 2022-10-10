@@ -5,10 +5,10 @@ Shader "Custom/Shader01_Starter_Comments"
 {
     Properties
     {
-        _Color ("Color", Color) = (1,1,1,1)
-        _MainTex ("Albedo (RGB)", 2D) = "white" {}
-        _Glossiness ("Smoothness", Range(0,1)) = 0.5
-        _Metallic ("Metallic", Range(0,1)) = 0.0
+        _Color ("Color", Color) = (1,1,1,1)             // Color Interface 
+        _MainTex ("Albedo (RGB)", 2D) = "white" {}      // 2D Texture Interface
+        _Glossiness ("Smoothness", Range(0,1)) = 0.5    // Float Value Range Interface
+        _Metallic ("Metallic", Range(0,1)) = 0.0        // Float Value Range Interface
     }
     SubShader
     {
