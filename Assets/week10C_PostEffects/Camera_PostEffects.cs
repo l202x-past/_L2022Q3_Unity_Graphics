@@ -24,7 +24,7 @@ public class Camera_PostEffects : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myShader = Shader.Find("My/Camera/PostEffects");
+        myShader = Shader.Find("My/PostEffects/DefaultShader");
         GetComponent<Camera>().allowHDR = true;
         GetComponent<Camera>().depthTextureMode = DepthTextureMode.Depth;
     }
