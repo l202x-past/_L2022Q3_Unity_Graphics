@@ -54,7 +54,6 @@ public class MeshScripting_Pyramid_Normals : MonoBehaviour
 			13, 14, 15
 		};
 
-		Vector3 Up = Vector3.up;
 		Vector3 Down = Vector3.down;
 		Vector3 Front = Vector3.forward;
 		Vector3 Left = Vector3.left;
@@ -78,32 +77,6 @@ public class MeshScripting_Pyramid_Normals : MonoBehaviour
 			// Back
 			Back, Back, Back
 		};
-
-		/*
-		Vector3 N0 = Vector3.back + Vector3.left;
-		Vector3 N1 = Vector3.forward + Vector3.left;
-		Vector3 N2 = Vector3.forward + Vector3.right;
-		Vector3 N3 = Vector3.back + Vector3.right;
-		Vector3 N4 = Vector3.up;
-
-		normals = new Vector3[]
-		{
-			// Bottom
-			N0, N1, N2, N3,
- 
-			// Front
-			N2, N4, N1,
- 
-			// Left
-			N3, N4, N2,			
- 
-			// Right
-			N1, N4, N0,
-
-			// Back
-			N0, N4, N3
-		};
-		*/
 
 		gameObject.AddComponent<MeshFilter>();
 		gameObject.AddComponent<MeshRenderer>();
